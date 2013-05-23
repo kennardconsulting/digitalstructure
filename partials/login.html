@@ -3,7 +3,9 @@
 	<h1>Login</h1>
 	
 	<form class="form-login form-horizontal">
-		<metawidget ng-model="login" config="metawidgetConfig" />
+		<metawidget ng-model="login" config="metawidgetConfig">
+			<input id="loginPassword" type="password" ng-model="login.password"/>
+		</metawidget>
 		<div class="text-error">{{error}}</div>
 	</form>
 

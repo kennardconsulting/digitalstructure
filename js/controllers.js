@@ -32,7 +32,7 @@
 					} else {
 						delete $scope.error;
 						$rootScope.sid = data.sid;
-						$location.path( '/search' );
+						$location.path( '/home' );
 					}
 
 				} ).error( function( data ) {
@@ -311,14 +311,13 @@
 
 				visualHttp.post( baseUrl + '/rpc/' + $routeParams.pathName + '/?method=' + $routeParams.methodName + '_MANAGE&sid=' + $rootScope.sid, $scope.current ).then( function( result ) {
 
-					$scope.current.id = result.data.id;
-
 					if ( result.data.error !== undefined ) {
 						$scope.error = result.data.error.errornotes;
 					} else {
 						delete $scope.error;
+						$scope.current.id = result.data.id;
 						console.log( result.data.notes + " with id " + $scope.current.id );
-						$location.path( '/search' );
+						$location.path( '/search/' + $routeParams.pathName + '/' + $routeParams.methodName );
 					}
 				} );
 			},
@@ -333,7 +332,7 @@
 					console.log( result.data.notes + " id " + $scope.current.id );
 				} );
 
-				$location.path( '/search' );
+				$location.path( '/search/' + $routeParams.pathName + '/' + $routeParams.methodName );
 			},
 
 			cancel: function() {
