@@ -1,0 +1,14 @@
+<div class="container">
+
+	<h1>Edit {{routeParams.pathName}}</h1>
+
+	<form class="form-login form-horizontal">
+		<metawidget ng-model="current" config="metawidgetConfig" read-only="readOnly"/>
+	</form>
+
+	<div class="bottom-buttons">
+		<div class="text-error">{{error}}</div>
+		<metawidget ng-model="actions" config="metawidgetActionsConfig"/>
+	</div>
+	
+</div>

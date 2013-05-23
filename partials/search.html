@@ -1,0 +1,18 @@
+<div class="container">
+
+	<h1>Search {{routeParams.pathName}}s</h1>
+	
+	<div class="top-buttons">
+		<button class="btn btn-primary" ng-click="search()">Search</button>
+		<a class="btn" href="#/new/{{routeParams.pathName}}/{{routeParams.methodName}}">New</a>
+	</div>
+	
+	<div id="results">
+		<metawidget ng-model="results" config="metawidgetConfig"/>
+	</div>	
+	
+	<div class="bottom-buttons">
+		<a href="#/home" class="btn">Home</a>
+	</div>
+
+</div>
